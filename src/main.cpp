@@ -13,9 +13,9 @@ int main(void) {
 
 	window.SetColor(0.2f, 0.3f, 0.3f);
 
-	Shader colorShader("/home/jastcher/Programming/engine/src/shaders/default.shader");
-	Shader textureShader("/home/jastcher/Programming/engine/src/shaders/texture.shader");
-	Shader billboardShader("/home/jastcher/Programming/engine/src/shaders/billboard.shader");
+	Shader colorShader("src/shaders/default.shader");
+	Shader textureShader("src/shaders/texture.shader");
+	Shader billboardShader("src/shaders/billboard.shader");
 
 	Mesh mesh(renderer.quadVertices, renderer.quadIndices);
 	Mesh lineMesh(renderer.lineVertices, renderer.lineIndices, GL_LINES);
@@ -24,10 +24,10 @@ int main(void) {
 	whiteMaterial.color = glm::vec3(1.0f, 1.0f, 1.0f);
 
 	Material crateMaterial;
-	crateMaterial.LoadTexture("/home/jastcher/Programming/engine/res/textures/crate.jpg");
+	crateMaterial.LoadTexture("res/textures/crate.jpg");
 
 	Material camMaterial;
-	camMaterial.LoadTexture("/home/jastcher/Programming/engine/res/icons/video-camera.png");
+	camMaterial.LoadTexture("res/icons/video-camera.png");
 
 	Object object(&mesh, &crateMaterial, &textureShader);
 	object.transform.scale = glm::vec3(0.5f);
